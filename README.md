@@ -46,12 +46,11 @@ This guide will walk you through creating a GitHub App and configuring it to wor
    - Create or edit the `.env` file with the following variables:
 
    ```env
-   APP_ID=<YOUR_APP_ID>
-   PRIVATE_KEY=<YOUR_PRIVATE_KEY_CONTENT>
-   WEBHOOK_SECRET=<YOUR_WEBHOOK_SECRET>
-   GITHUB_CLIENT_ID=<YOUR_GITHUB_CLIENT_ID>
-   GITHUB_CLIENT_SECRET=<YOUR_GITHUB_CLIENT_SECRET>
-   PORT=<DESIRED_PORT_NUMBER>
+    APP_ID, PRIVATE_KEY, WEBHOOK_SECRET, GITHUB_CLIENT_ID, and GITHUB_CLIENT_SECRET are provided by GitHub upon app creation.
+    PORT is the local port where your Probot app will run.
+    ATLAS_URI is your MongoDB Atlas connection string, obtainable from MongoDB Atlas.
+    SERVER_API_BASE_URL is your gamification server URL.
+    FAST_API_BASE_URL is the base URL for your FastAPI app, typically obtained after running it with uvicorn
 
    Replace placeholder values with those specific to your app.
 
@@ -87,7 +86,7 @@ npm start
 This command initiates `server.js` on `localhost:3002`.
 
 #### 6. FastAPI App (Folder: `FastAPI`)
-Navigate to `/FastAPI/gpt/main.py` and replace the chatgpt api key string with your obtained api key from OpenAi .
+Navigate to `/FastAPI/gpt/main.py` and replace the chatgpt api key string with your obtained api key from OpenAi , also replace the MongoDB URI with the URI from your cluster dashboard, and replace the server_api with your gamification server address (by default localhost:3002)
 
 - Navigate back to `/FastAPI` and run the command:
 uvicorn main:app --reload
