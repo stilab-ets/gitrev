@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+mangum
+sse_starlette
+llama-cpp-python
+pymongo
+requests
+openai
+httpx
