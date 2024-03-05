@@ -1,0 +1,67 @@
+GET http://localhost:3002/users
+
+###
+GET http://localhost:3002/user/64264f52eeaefc85014fad3b
+
+###
+GET http://localhost:3002/user/name/jaykay9999
+
+###
+GET http://github-game-server-env.eba-ri6awhsb.us-east-1.elasticbeanstalk.com/getUserPullRequestsData
+Authorization: Bearer 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
+
+###
+GET http://localhost:3002/getUserPullRequestsData
+Authorization: Bearer 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
+
+
+###
+GET http://localhost:3002/getUserPullRequestsData
+Authorization: Bearer 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
+###
+GET http://localhost:3002/friends/jaykay9999
+###
+POST http://localhost:3002/user/new
+Content-Type: application/json
+
+{
+  "name": "ggEazy99",
+  "avatar_url": "https://picsum.photos/200/300/?blur=2",
+  "totalPoints": 98,
+  "activities": [
+    {
+      "type": "Coding",
+      "points": 50,
+      "date": "2023-05-15T00:00:00Z"
+    },
+    {
+      "type": "Reading",
+      "points": 50,
+      "date": "2023-05-15T00:00:00Z"
+    }
+  ]
+}
+
+
+###
+
+DELETE http://localhost:3001/todo/delete/642c65a79012c55677f6aac9
+
+###
+
+PUT http://localhost:3001/todo/complete/64362732f499afe6b7169f2b
+
+
+###
+GET https://api.github.com/search/issues?q=author:JayKay9999+is:issue
+
+###
+GET http://localhost:3002/getUserCommentsReactions/jaykay9999
+
+###
+POST http://localhost:3002/user/checkAchievement
+Content-Type: application/json
+
+{
+  "senderName": "jaykay9999"
+}
