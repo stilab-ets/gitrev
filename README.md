@@ -18,6 +18,52 @@ Before you begin, ensure you have the following accounts and tools installed:
 
 #### 1. GitHub App (Folder: `probot`)
 
+
+This guide will walk you through creating a GitHub App and configuring it to work with Probot.
+
+## Step 1: Create Your GitHub App
+
+1. **Developer Settings**:
+   - Go to your GitHub account **Settings**.
+   - Click on **Developer settings** > **GitHub Apps** > **New GitHub App**.
+
+2. **App Configuration**:
+   - Enter your app's name and Homepage URL.
+   - Configure your Webhook URL (optional for development).
+   - Generate and download your private key securely.
+
+3. **Permissions & Events**:
+   - Set necessary permissions and event subscriptions.
+   - Click **Create GitHub App**.
+
+## Step 2: Configure Probot
+
+1. **Clone and Prepare**:
+   - Clone your Probot app repository to your machine.
+
+2. **Environment Variables**:
+   - Navigate to the `probot` folder.
+   - Create or edit the `.env` file with the following variables:
+
+   ```env
+   APP_ID=<YOUR_APP_ID>
+   PRIVATE_KEY=<YOUR_PRIVATE_KEY_CONTENT>
+   WEBHOOK_SECRET=<YOUR_WEBHOOK_SECRET>
+   GITHUB_CLIENT_ID=<YOUR_GITHUB_CLIENT_ID>
+   GITHUB_CLIENT_SECRET=<YOUR_GITHUB_CLIENT_SECRET>
+   PORT=<DESIRED_PORT_NUMBER>
+
+   Replace placeholder values with those specific to your app.
+
+    Install & Build:
+    Run npm install and npm run build in the probot directory.
+    Step 3: Run Your App
+    Execute npm start to run your Probot app.
+    For a step-by-step video tutorial, refer to this YouTube guide.
+
+    Note: The .env file already contains the necessary variables. You need to fill in the actual values provided by GitHub.
+
+
 #### 2. GitHub Authentication
 
 #### 3. Chrome Extension
