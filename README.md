@@ -59,7 +59,7 @@ This guide will walk you through creating a GitHub App and configuring it to wor
     Run npm install and npm run build in the probot directory.
     Step 3: Run Your App
     Execute npm start to run your Probot app.
-    For a step-by-step video tutorial, refer to this YouTube guide.
+    For more details, you can read the Probot documentation : https://probot.github.io/docs/configuration/
 
     Note: The .env file already contains the necessary variables. You need to fill in the actual values provided by GitHub.
 
