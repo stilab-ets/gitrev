@@ -2,6 +2,9 @@
 
 GitRev is a comprehensive gamification system designed to enhance the GitHub UI dashboard and user experience. It integrates a GitHub app, GitHub authentication, a Chrome extension, a MongoDB database, a Gamification server, and a FastAPI application to provide an engaging and interactive environment for GitHub users.
 
+
+![alt text](system_design.png)
+
 ## Getting Started
 
 These instructions will guide you through setting up GitRev both locally and on the cloud.
@@ -63,7 +66,6 @@ This guide will walk you through creating a GitHub App and configuring it to wor
     Note: The .env file already contains the necessary variables. You need to fill in the actual values provided by GitHub.
 
 
-#### 2. GitHub Authentication
 
 #### 3. Chrome Extension
 
@@ -106,31 +108,29 @@ mongodb+srv://<username>:<password>@cluster0.j4sk7x6.mongodb.net/?retryWrites=tr
 - `CLIENT_ID`: Obtain this from your GitHub app settings under Developer Settings.
 - `CLIENT_SECRET`: Also found in your GitHub app settings.
 - `ATLAS_URI`: Use the MongoDB URI from your cluster setup.
+
+Naviage back to `/myserver`
+- Install dependencies with the command:
+npm install
 - Run the server with the command:
 npm start
 This command initiates `server.js` on `localhost:3002`.
 
 #### 6. FastAPI App (Folder: `FastAPI`)
-Navigate to `/FastAPI/gpt/main.py` and replace the chatgpt api key string with your obtained api key from OpenAi , also replace the MongoDB URI with the URI from your cluster dashboard, and replace the server_api with your gamification server address (by default localhost:3002)
+Navigate to `/FastAPI/main.py` and replace the chatgpt api key string with your obtained api key from OpenAi , also replace the MongoDB URI with the URI from your cluster dashboard, and replace the server_api with your gamification server address (by default localhost:3002)
 
 - Navigate back to `/FastAPI` and run the command:
+pip install -r requirements.txt
+
+- Then run the command: 
 uvicorn main:app --reload
+
 This command starts the FastAPI application, making it accessible on port `8000`.
 
-- **Optional:** If an OpenAI ChatGPT API key is unavailable, you can use the open-source model "Vicuna-8b" locally. For setup instructions, refer to the provided YouTube video and ensure to uncomment the Vicuna-related code in the FastAPI application.
-
-### Cloud Setup
-
-AWS setup for each application
-
-## Contributing
-
-Contributions to GitRev are welcome! Please read `CONTRIBUTING.md` for details on our code of conduct and the process for submitting pull requests.
-
-## License
-
-This project is licensed under the MIT License - see the `LICENSE` file for details.
 
 
--------------------------------------------------------------
-Not the final Readme Version
+#### 7. GitRev Usage
+
+Once the full system is running, the probot app will start tracking your GitHub activities and update your earned points in the database through "myserver" and "fastapi"
+
+To access the gamification elements (badges, leaderboards, etc...) you should go to https://github.com and make sure that you are logged in. You will find a new purple button on top right that allows you to automatically create an account in 1 click. after account creation, you should be able to view all the game elements directly on your GitHub dashboard. This video shows hows the system works after complete setup: https://www.youtube.com/watch?v=Zbu71fWkYi0

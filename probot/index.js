@@ -478,7 +478,7 @@ app.on("issue_comment.created", async (context) => {
   
       // Calculate the final points considering all the factors.
       const basePoints = 15;
-      const finalPoints = basePoints * difficultyScore * timeMultiplier; // If you wish to include `lines_inspected` in this calculation, you can multiply it here as well.
+      const finalPoints = basePoints * difficultyScore * timeMultiplier + lines_inspected;
   
       updatePoints(sender, finalPoints);
       updateActivities(sender, { type: "closed pull request", difficultyScore: difficultyScore, timeMultiplier: timeMultiplier, linesInspected: lines_inspected , points: finalPoints });
@@ -566,7 +566,7 @@ console.log("pull_request_review.submitted");
   
       // Calculate the final points considering all the factors.
       const basePoints = 20;
-      const finalPointsRaw = basePoints * difficultyScore * timeMultiplier //* (lines_inspected/100);
+      const finalPointsRaw = basePoints * difficultyScore * timeMultiplier + lines_inspected;
       const finalPoints = Math.round(finalPointsRaw);
       
   

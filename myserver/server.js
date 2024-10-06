@@ -145,7 +145,8 @@ app.get('/callback', async (req, res) => {
           description: "Close an issue or Pull Request with Label -High- bounty",
         }
       ],
-        country: 'CA',
+        //country: ip,
+        country: 'CA', // CA is temporarely set to avoid issues with the country code, replace with ip
 
         //githubAccessToken: accessToken, // set the access token
       });

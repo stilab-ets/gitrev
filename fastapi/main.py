@@ -13,8 +13,8 @@ import httpx
 
 
 
-mongo_client = MongoClient('your_mongodb_URI', 27017)
-mongo_db = mongo_client["testdb1"]  # Replace <db_name> with your MongoDB database name
+mongo_client = MongoClient('your_mongodb_URI', 27017) # Replace your_mongodb_URI with your MongoDB URI
+mongo_db = mongo_client["testdb1"]  
 issue_processing_collection = mongo_db["issues"]
 user_collection = mongo_db["users"]
 pull_request_processing_collection = mongo_db["pullrequests"]
