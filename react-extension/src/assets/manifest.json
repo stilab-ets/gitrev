@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "GitRev Game",
+  "description": "Gamify your GitHub experience. Level up , collect skins, climb the leaderboards and more!",
+  "version": "1.0.7",
+  "icons": { 
+    "16": "GitRev.png",
+    "48": "GitRev.png",
+    "128": "GitRev.png"
+ },
+
+ "action" : {
+    "default_title": "GitRev click me",
+    "default_popup": "popup.html"
+ },
+
+  "permissions": [
+    "identity",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+ "content_scripts": [
+  {
+    "matches": ["https://github.com/*"],
+    "js": ["contentScript.js"],
+    "run_at": "document_end"
+  }
+]
+}
